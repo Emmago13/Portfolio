@@ -1,0 +1,69 @@
+.section__home{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+      font-size: 5.8rem;
+      margin: 16rem 0 3rem 0;
+      width: 21ch;
+      font-family: $font-secondary;
+      font-weight: $font-medium;
+      animation: type 5s steps(31), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      color: $color-secondary;
+    }
+    p{
+      width: 50rem;
+      font-size: 1.6rem;
+    }
+}
+
+@keyframes  type {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+//Breakpoints
+
+@include breakpoint("desktop"){
+  .section__home h1{
+    font-size: 4.8rem;
+  }
+}
+@include breakpoint("tablet"){
+  .section__home h1{
+    font-size: 3.6rem;
+  }
+}
+@include breakpoint("mobile"){
+  .section__home{
+    height: 85vh;
+    h1{
+      animation: none;
+      width: auto;
+      white-space: inherit;
+      border: none;
+      text-align: center;
+      padding: 0 2rem;
+      margin-top: 10rem;
+    }
+    p{
+      font-size: 1.4rem;
+      text-align: center;
+      width: auto;
+      padding: 0 2rem;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+html{
+  margin: 0;
+  font-size: 10px;
+}
+body{
+  scroll-behavior: smooth;
+  background-color: $white-color;
+  margin: 0;
+  font-family: $font-primary;
+  font-weight: $font-regular;
+}
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+.d-none{
+  display: none;
+}
+
+

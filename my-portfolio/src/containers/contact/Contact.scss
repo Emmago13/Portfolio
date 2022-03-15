@@ -1,0 +1,173 @@
+.section__contact{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .div__form{
+        margin-left: 13rem;
+        background-color: #EAE9E9;
+        width: 43rem;
+        height: 50rem;
+        border-radius: 10px;
+        > form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            > label{
+                position: relative;
+                width: 80%;
+                margin-top: 4rem;
+                > input, textarea{
+                    width: 100%;
+                    border: none;
+                    background: none;
+                    font-family: $font-primary;
+                    border-bottom: 1px solid $color-secondary;
+                    &:focus{
+                        background: none;
+                        outline: none;
+                    }
+                    &::placeholder{
+                        opacity: 0;
+                    }
+                    // &:valid{
+                    //     border-bottom: 2px solid #55D688;
+                    // }
+                    // &:invalid{
+                    //     border-bottom: 2px solid #FD4444;
+                    // }
+                    // &:invalid ~ .validation{
+                    //     opacity: 1;
+                    //     transform: translate(0,-50%);
+                    // }
+                }
+                > input{
+                    height: 4rem;
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:focus{
+                        transition: background-color 600000s 0s, color 600000s 0s;
+                    }
+                }
+                > textarea{
+                    height: 8rem;
+                    resize: none;
+                }
+                > span{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 1.4rem;
+                    opacity: 0.7;
+                    transition: all 0.1s ease-in;
+                }
+                &:focus-within > span, input:not(:placeholder-shown) + span{
+                    transform: translateY(-15px);
+                    font-size: 1.2rem;
+                }
+                // .validation{
+                //     position: absolute;
+                //     top: 50%;
+                //     right: 1rem;
+                //     color: #FD4444;
+                //     opacity: 0;
+                //     transform: translate(5rem,-50%);
+                //     transition: all 0.2s ease-in;
+                // }
+            }
+            > label:nth-child(4){
+                &:focus-within > span, textarea:not(:placeholder-shown) + span{
+                    transform: translateY(-20px);
+                }
+            }
+            > button{
+                margin-top: 5rem;
+                @include button(1.5px,1.5px);
+            }
+        }
+    }
+    .div__img{
+        margin-right: 10rem;
+        > h2{
+            margin: 0;
+            font-family: $font-secondary;
+            font-weight: $font-regular;
+            font-size: 4.8rem;
+            color: $color-secondary;
+        }
+        > p{
+            font-size: 1.6rem;
+            margin-top: 3rem;
+            line-height: 21px;
+        }
+        > img{
+            margin-top: 4rem;
+            max-width: 400px;
+            max-height: 400px;
+        }
+    }
+}
+
+
+//Breakpoints
+
+
+@include breakpoint("lg-desktop"){
+    .section__contact .div__img{
+        margin-right: 5rem;
+    }
+}
+@include breakpoint("desktop"){
+    .section__contact{
+        flex-direction: column-reverse;
+        height: max-content;
+        .div__img{
+            margin-top: 7rem;
+            margin-right: 0;
+            img{
+                display: none;
+            }
+            h2{
+                font-size: 3.6rem;
+            }
+        }
+        .div__form{
+            margin: 5rem 0;
+        }
+    }
+}
+@include breakpoint("mobile"){
+    .section__contact{
+        .div__img{
+            padding: 0 2rem;
+            p{
+                font-size: 1.4rem;
+            }
+        }
+        .div__form{
+            width: 80%;
+        }
+    }
+}
+@include breakpoint("sm-mobile"){
+    .section__contact{
+        .div__img{
+            h2{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+            }
+        }
+        .div__form{
+            width: 100%;
+        }
+    } 
+}
+@media screen and (min-height: 1000px){
+    .section__contact{
+        height: 90vh;
+        justify-content: center;
+    }
+}

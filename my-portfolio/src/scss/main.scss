@@ -1,5 +1,5 @@
 //Fonts
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
 
 //Variables
 @import './variables';
@@ -11,3 +11,10 @@
 @import './default';
 
 //Components and Containers
+
+@import './header';
+@import '../containers/contact/Contact.scss';
+@import '../components/footer/Footer.scss';
+@import '../components/home/Home.scss';
+@import '../components/about/About.scss';
+@import '../components/projects/Projects.scss';
