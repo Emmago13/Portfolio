@@ -1,0 +1,103 @@
+.section__about{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div{
+        margin-left: 12rem;
+        max-width: 42rem;
+        h2{
+            font-size: 4.8rem;
+            font-family: $font-secondary;
+            font-weight: $font-medium;
+            color: $color-secondary;
+            margin: 3rem 0;
+        }
+        img{
+            display: none;
+        }
+        p{
+            font-size: 1.6rem;
+            line-height: 21px;
+        }
+        h4{
+            margin-top: 5rem;
+            font-size: 1.6rem;
+            font-family: $font-secondary;
+            font-weight: $font-bold;
+        }
+        button{
+            @include button(1.5px,1.5px);
+            left: 20%;
+            cursor: pointer;
+        }
+    }
+    img{
+        width: 45%;
+        height: 45%;
+        margin-right: 4rem;
+    }
+}
+
+
+
+//breakpoints
+
+@include breakpoint("xl-desktop"){
+    .section__about img{
+        width: 50%;
+        height: 50%;
+        margin-right: 9rem;
+    }
+}
+@include breakpoint("desktop"){
+    .section__about{
+        justify-content: center;
+        height: max-content;
+        div{
+            margin: 0;
+            padding: 5rem 2rem;
+            img{
+                display: block;
+                width: 100%;
+                margin: 10rem 0;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+            button{
+                left: 25%;
+            }
+        }
+        img{
+            display: none;
+        }
+    }
+}
+@include breakpoint("tablet"){
+    .section__about{ 
+        height: max-content;
+        div h2{
+            font-size: 3.6rem;
+        }
+    }
+}
+@include breakpoint("mobile"){
+    .section__about{
+        div button{
+            margin: 3rem 0;
+        }
+    }
+}
+@include breakpoint("sm-mobile"){
+    .section__about div button{
+        left: 15%;
+        margin: 3rem 0;
+    }
+}
+@media screen and (min-height: 1000px){
+    .section__about{
+        height: 90vh;
+    }
+}

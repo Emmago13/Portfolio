@@ -1,0 +1,109 @@
+@mixin button($heightSpan,$heightPseudo) {
+    position: relative;
+    width: 170px;
+    height: 38px;
+    border: none;
+    background-color: $color-secondary;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    border: 1px solid $color-secondary;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    > span{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 1rem;
+    }
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $color-secondary;
+        transition: all 0.3s ease;
+    }
+    &:before {
+        right: 0;
+        height: 0%;
+        width: $heightPseudo;
+    }
+    &:after {
+        left: 0;
+        width: 0%;
+        height: $heightPseudo;
+    }
+    span:before,
+    span:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background: $color-secondary;
+        transition: all 0.3s ease;
+    }
+    span:before {
+        left: 0;
+        height: 0%;
+        width: $heightSpan;
+    }
+    span:after {
+        right: 0;
+        width: 0%;
+        height: $heightSpan;
+    }
+    &:hover {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+    &:hover:before {
+        height: 100%;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    span:hover {
+        color: $color-secondary;
+    }
+    span:hover:before {
+        height: 100%;
+    }
+    span:hover:after {
+        width: 100%;
+    }
+    &:active {
+        top: 2px;
+    }
+}
+
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == "sm-mobile" {
+        @media only screen and (max-width: 320px) {
+            @content;
+        }
+    } @else if $breakpoint == "mobile" {
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    } @else if $breakpoint == "tablet" {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    } @else if $breakpoint == "desktop" {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    } @else if $breakpoint == "lg-desktop" {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    } @else if $breakpoint == "xl-desktop" {
+        @media only screen and (min-width: 1200px) {
+            @content
+        }
+    }
+} 
