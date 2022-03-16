@@ -16,10 +16,11 @@ const Contact = () => {
                 [e.target.name] : e.target.value,
             }
         })
-        console.log(dataForm);
     }
 
-
+    const handleSubmit = (e) => {
+        
+    }
 
 
 
@@ -27,7 +28,7 @@ const Contact = () => {
         <Fragment>
             <section className="section__contact" id="contact">
                 <div className="div__form">
-                    <form action="" method="post">
+                    <form action="" method="post" onSubmit={e => handleSubmit(e)}>
                         <label for="inputName" className="label--chl__1">
                             <input onChange={e => handleChange(e)} type="text" id="inputName" name="name" placeholder="Name" required />
                             <span>Name</span>
