@@ -31,6 +31,9 @@
             @include button(1.5px,1.5px);
             left: 20%;
             cursor: pointer;
+            &.disabled{
+                pointer-events: none;
+            }
         }
     }
     img{

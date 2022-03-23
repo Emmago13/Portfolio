@@ -5,12 +5,16 @@ import LandingPageImg from '../../assets/images/9e3bd8127399839.614113df90751.pn
 import ApiMundoseImg from '../../assets/images/ApiMundosE.png';
 import SimpleCalculatorImg from '../../assets/images/SimpleCalculator.png';
 import ShopCartImg from '../../assets/images/ShopCart.png';
+import { Helmet } from "react-helmet";
 
 
 
 const Projects = () => {
     return(
         <Fragment>
+            <Helmet>
+                <title>Emmanuel Gomez | Projects</title>
+            </Helmet>
             <section className="section__works" id="works">
                 <h2>Let’s see some of my own projects</h2>
                 <div className="works__container">
@@ -23,7 +27,7 @@ const Projects = () => {
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>
                         </div>
-                        <a href="https://egmyapp.herokuapp.com/" target="_blank" rel="noreferrer">
+                        <a href="https://egmyapp.netlify.app/" target="_blank" rel="noreferrer">
                             <img src={LandingPageImg} alt="Landing page " />
                         </a>
                     </div>
@@ -49,12 +53,12 @@ const Projects = () => {
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>
                         </div>
-                        <a href="https://eg-calculator.herokuapp.com/" target="_blank" rel="noreferrer">
+                        <a href="https://egcalculator.vercel.app/" target="_blank" rel="noreferrer">
                             <img src={SimpleCalculatorImg} alt="Simple calculator " />
                         </a>
                     </div>
                     <div className="works__div--left">
-                        <a href="https://eg-shopcart.herokuapp.com/" target="_blank" rel="noreferrer">
+                        <a href="https://shop-cart-photography.vercel.app/" target="_blank" rel="noreferrer">
                             <img src={ShopCartImg} alt="Photography Shop Cart" />
                         </a>
                         <div className="works__img--left">
