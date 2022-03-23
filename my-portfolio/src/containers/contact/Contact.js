@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Footer from '../../components/footer/Footer';
 import contactImg from '../../assets/images/undraw_personal_email_re_4lx7 (1).svg';
 import { Helmet } from "react-helmet";
@@ -6,21 +6,21 @@ import { Helmet } from "react-helmet";
 
 const Contact = () => {
 
-    const [dataForm, setDataForm] = useState({});
+    // const [dataForm, setDataForm] = useState({});
 
 
-    const handleChange = (e) => {
-        setDataForm((prevData) => {
-            return{
-                ...prevData,
-                [e.target.name] : e.target.value,
-            }
-        })
-    }
+    // const handleChange = (e) => {
+    //     setDataForm((prevData) => {
+    //         return{
+    //             ...prevData,
+    //             [e.target.name] : e.target.value,
+    //         }
+    //     })
+    // }
 
-    const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
         
-    }
+    // }
 
 
 
@@ -31,23 +31,23 @@ const Contact = () => {
             </Helmet>
             <section className="section__contact" id="contact">
                 <div className="div__form">
-                    <form action="" method="post" onSubmit={e => handleSubmit(e)}>
+                    <form action="" method="post" >
                         <label for="inputName" className="label--chl__1">
-                            <input onChange={e => handleChange(e)} type="text" id="inputName" name="name" placeholder="Name" required />
+                            <input  type="text" id="inputName" name="name" placeholder="Name" required />
                             <span>Name</span>
                             {/* <div className="validation">* Required</div> */}
                         </label>
                         <label for="inputEmail" className="label--chl__2">
-                            <input onChange={e => handleChange(e)} type="email" id="inputEmail" name="email" placeholder="Email" required />
+                            <input  type="email" id="inputEmail" name="email" placeholder="Email" required />
                             <span>Email</span>
                             {/* <div className="validation">* Required</div> */}
                         </label>
                         <label for="inputTel" className="label--chl__3">
-                            <input onChange={e => handleChange(e)} type="tel" id="inputTel" name="phone" placeholder="Phone" />
+                            <input  type="tel" id="inputTel" name="phone" placeholder="Phone" />
                             <span>Phone</span>
                         </label>
                         <label for="inputMessage" className="label--chl__4">
-                            <textarea onChange={e => handleChange(e)} name="message" id="inputMessage" cols="30" rows="10" placeholder="Message" required></textarea>
+                            <textarea  name="message" id="inputMessage" cols="30" rows="10" placeholder="Message" required></textarea>
                             <span>Message</span>
                             {/* <div className="validation">* Required</div> */}
                         </label>
