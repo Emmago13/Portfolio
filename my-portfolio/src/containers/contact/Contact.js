@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Footer from '../../components/footer/Footer';
 import contactImg from '../../assets/images/undraw_personal_email_re_4lx7 (1).svg';
-
+import { Helmet } from "react-helmet";
 
 
 const Contact = () => {
@@ -26,6 +26,9 @@ const Contact = () => {
 
     return(
         <Fragment>
+            <Helmet>
+                <title>Emmanuel Gomez | Contact</title>
+            </Helmet>
             <section className="section__contact" id="contact">
                 <div className="div__form">
                     <form action="" method="post" onSubmit={e => handleSubmit(e)}>

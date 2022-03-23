@@ -2,12 +2,16 @@ import React, { Fragment } from 'react';
 import Footer from '../footer/Footer';
 import AboutImg from '../../assets/images/undraw_hello_re_3evm.svg';
 import { WavyLink} from "react-wavy-transitions";
+import { Helmet } from "react-helmet";
 
 
 
 const About = () => {
     return(
         <Fragment>
+            <Helmet>
+                <title>Emmanuel Gomez | About</title>
+            </Helmet>
             <section className="section__about" id="about">
                 <div>
                     <h2>Who I am</h2>
@@ -22,7 +26,7 @@ const About = () => {
                         I have experience working with HTML5, Css3, Sass, Bootstrap, JavaScript, React.js, PHP and the framework Laravel.
                     </p>
                     <h4>If you are interested on collaborating or just talk </h4>
-                    <WavyLink to="/contact" waveColor="#9C2D41" ><span>Start a conversation</span></WavyLink>
+                    <WavyLink to="/contact" waveColor="#9C2D41" disabled="true" ><span>Start a conversation</span></WavyLink>
                 </div>
                 <img src={AboutImg} alt="about-img" title="image from unDraw" />
             </section>
