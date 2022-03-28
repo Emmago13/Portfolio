@@ -153,11 +153,6 @@
         }
     }
 }
-@media only screen and (max-width: 400px){
-    .section__contact .div__form{
-        width: 100%;
-    }
-}
 @include breakpoint("sm-mobile"){
     .section__contact{
         .div__img{
@@ -167,6 +162,9 @@
             p{
                 text-align: center;
             }
+        }
+        .div__form{
+            width: 100%;
         }
     } 
 }
