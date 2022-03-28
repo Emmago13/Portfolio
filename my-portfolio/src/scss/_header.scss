@@ -50,6 +50,7 @@
             width: 100%;  
             text-align: center;
             cursor: default;
+            transform: translateY(-150%);
             > li{
                 position: relative;  
                 display: inline-block;  
@@ -146,6 +147,11 @@
                 }
             }
           }
+        }
+        &.nav__active{
+            nav > ul{
+                transform: translateY(30vh);
+            }
         }
     }
 }
