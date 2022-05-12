@@ -26,7 +26,7 @@ const About = () => {
                         I have experience working with HTML5, Css3, Sass, Bootstrap, JavaScript, React.js, PHP and the framework Laravel.
                     </p>
                     <h4>If you are interested on collaborating or just talk </h4>
-                    <WavyLink to="/contact" waveColor="#9C2D41" disabled="true" ><span>Start a conversation</span></WavyLink>
+                    <WavyLink to="/contact" waveColor="#9C2D41" ><span>Start a conversation</span></WavyLink>
                 </div>
                 <img src={AboutImg} alt="about-img" title="image from unDraw" />
             </section>
