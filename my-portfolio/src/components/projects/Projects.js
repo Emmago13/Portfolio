@@ -22,7 +22,7 @@ const Projects = () => {
                         <div className="works__img--right">
                             <h4>Landing Page</h4>
                             <p>Single page made it with React.js, personalized with Sass preprocessor and Bootstrap. The contact form connects you, through axios, with an Api that sends you a confirmation email.</p>
-                            <a href="https://github.com/Emmago13/MundosE/tree/master/my-app" target="_blank" rel="noreferrer" className="img--disable">
+                            <a href="https://github.com/Emmago13/MundosE/tree/master/my-app" target="_blank" rel="noreferrer" className="a--disable">
                                 <p>Check the code</p>
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>
@@ -32,13 +32,13 @@ const Projects = () => {
                         </a>
                     </div>
                     <div className="works__div--left">
-                        <a href="https://egmundoseapi.herokuapp.com/" target="_blank" rel="noreferrer">
-                            <img src={ApiMundoseImg} alt="Api project " />
+                        <a href="https://egmundoseapi.herokuapp.com/" target="_blank" rel="noreferrer" className='img--disable' >
+                            <img src={ApiMundoseImg} alt="Api project "/>
                         </a>
                         <div className="works__img--left">
                             <h4>Api</h4>
                             <p>This Api let you send a confirmation email and save the data in a database for whoever use a form. It's made it in PHP, especifically through the Laravel framework.</p>
-                            <a href="https://github.com/Emmago13/MundosE-backend" target="_blank" rel="noreferrer" className="img--disable">
+                            <a href="https://github.com/Emmago13/MundosE-backend" target="_blank" rel="noreferrer" className="a--disable">
                                 <p>Check the code</p>
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>
@@ -48,7 +48,7 @@ const Projects = () => {
                         <div className="works__img--right">
                             <h4>Simple Calculator</h4>
                             <p>Simple calculator made it with HTML5, Sass preprocessor and vanilla Javascript. It let you make simple operations and shows you the result in a easy and efficient way.</p>
-                            <a href="https://github.com/Emmago13/Calculator" target="_blank" rel="noreferrer" className="img--disable">
+                            <a href="https://github.com/Emmago13/Calculator" target="_blank" rel="noreferrer" className="a--disable">
                                 <p>Check the code</p>
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>
@@ -64,7 +64,7 @@ const Projects = () => {
                         <div className="works__img--left">
                             <h4>Photography Store</h4>
                             <p>Photography shopping cart that let's you select, modify the quantity and delete the diferents elementes in the store. Made it with HTML5, Css3 and vanilla Javascript.</p>
-                            <a href="https://github.com/Emmago13/Shop-Cart" target="_blank" rel="noreferrer" className="img--disable">
+                            <a href="https://github.com/Emmago13/Shop-Cart" target="_blank" rel="noreferrer" className="a--disable">
                                 <p>Check the code</p>
                                 <img src={RightArrow} alt="Right arrow" />
                             </a>

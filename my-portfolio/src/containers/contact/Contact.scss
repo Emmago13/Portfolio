@@ -85,16 +85,9 @@
                     opacity: 0;
                 }
                 .required {
-                    color: #FD4444;
+                    color: $error-color;
                     animation: invalid 0.2s ease-in;
                 }
-                // &::before {
-                //     content: 'Required';
-                //     position: absolute;
-                //     top: 0;
-                //     right: 0;
-                //     color: #FD4444;
-                // }
             }
             > label:nth-child(1) {
                 margin-top: 7rem;
@@ -105,11 +98,26 @@
             //     }
             // }
             .invalid {
-                color: #FD4444;
+                color: $error-color;
                 animation: shake 0.3s ease;
             }
+            > div {
+                height: 4rem;
+                background: rgba(253,68,68,0.2);
+                padding: 1rem;
+                border-radius: 5px;
+                border: 1px solid rgba(253,68,68,0.2);
+                font-size: 1.4rem;
+                color: $error-color;
+                margin-top: 2rem;
+                opacity: 0;
+                transition: all 0.1s ease-in;
+                &.error__show {
+                    opacity: 1;
+                }
+            }
             > button{
-                margin-top: 5rem;
+                margin-top: 3rem;
                 @include button(1.5px,1.5px);
             }
         }

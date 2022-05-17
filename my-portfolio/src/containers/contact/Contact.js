@@ -12,6 +12,8 @@ const Contact = () => {
     const [nameValidated,setNameValidated] = useState(true);
     const [emailValidated,setEmailValidated] = useState(true);
     const [messageValidated,setMessageValidated] = useState(true);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [validMessage, setValidMessage] = useState('Send Message');
 
 
     const handleChange = (e) => {
@@ -32,11 +34,10 @@ const Contact = () => {
         }
     }
 
-    console.log(dataForm);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        e.stopPropagation();
         const form = e.currentTarget;
         
         if(form.checkValidity() === false) {
@@ -45,8 +46,7 @@ const Contact = () => {
             setEmailValidated(false);
             setMessageValidated(false);
 
-            console.log('Oh no! Something happen');
-            console.log('form.checkValidity()', form.checkValidity());
+            setErrorMessage('Complete required fields');
         }else{
             const response = await sendForm(dataForm);
             if(response.status === 200) {
@@ -54,10 +54,13 @@ const Contact = () => {
                 setEmailValidated(true);
                 setMessageValidated(true);
                 setError(false);
-                console.log('congrats!');
+                setValidMessage('Message sent');
+                setTimeout(() => {setValidMessage('Send Message')}, 3000)
                 form.reset();
+
             }else if(response.status === 400){
                 setError(true);
+                setErrorMessage(response.data.error);
                 setNameValidated(false);
                 setEmailValidated(false);
                 setMessageValidated(false);
@@ -65,7 +68,6 @@ const Contact = () => {
         }
 
     }
-
 
 
 
@@ -123,13 +125,16 @@ const Contact = () => {
                                 * Required
                             </div>
                         </label>
-                        <button type="submit"><span>Send Message</span></button>
+                        <div className={error ? 'error__show' : null} >{errorMessage}</div>
+                        <button type="submit" className={validMessage === 'Message sent' ? 'button__valid' : null}>
+                            <span>{validMessage}</span>
+                        </button>
                     </form>
                 </div>
                 <div className="div__img">
                     <h2>Let's get in touch!</h2>
                     <p>If you are interested in work with me or just talk you can email<br/> me or contact me through one of the social medias below.</p>
-                    <img src={contactImg} alt="contactImg" title="image from unDraw" />
+                    <img src={contactImg} alt="girl handling a giant phone and a letter" title="image from unDraw" />
                 </div>
             </section>
             <Footer />
