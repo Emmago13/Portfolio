@@ -51,8 +51,11 @@
                         opacity: 1;
                     }
                 }
+                &.img--disable {
+                    pointer-events: none;
+                }
             }
-            .img--disable{
+            .a--disable{
                 &:hover{
                     transform: scale(1);
                     box-shadow: none;
@@ -61,26 +64,6 @@
                     }
                 }
             }
-            // > a::before{
-            //     content: 'View project';
-            //     position: absolute;
-            //     border-radius: 50px;
-            //     font-size: 150%;
-            //     font-family: $font-secondary;
-            //     font-weight: $font-medium;
-            //     display: flex;
-            //     align-items: center;
-            //     text-align: center;
-            //     justify-content: center;
-            //     top: 40%;
-            //     left: 42%;
-            //     width: 15%;
-            //     height: 25%;
-            //     color: #fff;
-            //     background-color: rgba(0, 0, 0, 0.4);
-            //     transition: all 0.2s cubic-bezier(0, 0.2, 0.5, 3) 0s;
-            //     opacity: 0;
-            // }
             .works__img--right,.works__img--left{
                 max-width: 40rem;
                 > a{
