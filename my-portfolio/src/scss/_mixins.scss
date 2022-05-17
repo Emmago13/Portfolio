@@ -1,7 +1,7 @@
 @mixin button($heightSpan,$heightPseudo) {
     position: relative;
     width: 170px;
-    height: 38px;
+    height: 4rem;
     border: none;
     background-color: $color-secondary;
     color: #fff;
@@ -76,7 +76,27 @@
         width: 100%;
     }
     &:active {
-        top: 2px;
+        transform: translateY(5px);
+    }
+    &.button__valid {
+        background-color: rgba(87,170,142,0.5);
+        border: 1px solid #57aa8e;
+        color: #0a5b3e;
+        &:hover:before {
+            height: 0%;
+        }
+        &:hover:after {
+            width: 0%;
+        }
+        span:hover {
+            color: #0a5b3e;
+        }
+        span:hover:before {
+            height: 0%;
+        }
+        span:hover:after {
+            width: 0%;
+        }
     }
 }
 

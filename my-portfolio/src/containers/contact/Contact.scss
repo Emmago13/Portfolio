@@ -11,14 +11,15 @@
         height: 50rem;
         border-radius: 10px;
         > form{
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            > label{
+            justify-content: flex-start;
+            > label {
                 position: relative;
                 width: 80%;
-                margin-top: 4rem;
+                margin-top: 5rem;
                 > input, textarea{
                     width: 100%;
                     border: none;
@@ -69,23 +70,54 @@
                     transform: translateY(-15px);
                     font-size: 1.2rem;
                 }
-                // .validation{
-                //     position: absolute;
-                //     top: 50%;
-                //     right: 1rem;
-                //     color: #FD4444;
-                //     opacity: 0;
-                //     transform: translate(5rem,-50%);
-                //     transition: all 0.2s ease-in;
-                // }
-            }
-            > label:nth-child(4){
                 &:focus-within > span, textarea:not(:placeholder-shown) + span{
                     transform: translateY(-20px);
+                    font-size: 1.2rem;
+                }
+                .required, .no__required{
+                    position: absolute;
+                    top: 0;
+                    right: 1rem;
+                    font-size: 1.1rem;
+                    transition: all 0.2s ease-in;
+                }
+                .no__required {
+                    opacity: 0;
+                }
+                .required {
+                    color: $error-color;
+                    animation: invalid 0.2s ease-in;
+                }
+            }
+            > label:nth-child(1) {
+                margin-top: 7rem;
+            }
+            // > label:nth-child(4){
+            //     &:focus-within > span, textarea:not(:placeholder-shown) + span{
+            //         transform: translateY(-20px);
+            //     }
+            // }
+            .invalid {
+                color: $error-color;
+                animation: shake 0.3s ease;
+            }
+            > div {
+                height: 4rem;
+                background: rgba(253,68,68,0.2);
+                padding: 1rem;
+                border-radius: 5px;
+                border: 1px solid rgba(253,68,68,0.2);
+                font-size: 1.4rem;
+                color: $error-color;
+                margin-top: 2rem;
+                opacity: 0;
+                transition: all 0.1s ease-in;
+                &.error__show {
+                    opacity: 1;
                 }
             }
             > button{
-                margin-top: 5rem;
+                margin-top: 3rem;
                 @include button(1.5px,1.5px);
             }
         }
@@ -111,6 +143,40 @@
         }
     }
 }
+
+//Animations
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(-5px);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes invalid {
+    from {
+        transform: translateX(4rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 
 //Breakpoints
