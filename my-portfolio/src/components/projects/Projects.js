@@ -32,7 +32,7 @@ const Projects = () => {
                         </a>
                     </div>
                     <div className="works__div--left">
-                        <a href="https://egmundoseapi.herokuapp.com/" target="_blank" rel="noreferrer" className='img--disable' >
+                        <a href="https://egmundose.herokuapp.com/" target="_blank" rel="noreferrer" >
                             <img src={ApiMundoseImg} alt="Api project "/>
                         </a>
                         <div className="works__img--left">
