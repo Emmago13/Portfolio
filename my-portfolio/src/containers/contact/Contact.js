@@ -45,8 +45,13 @@ const Contact = () => {
             setNameValidated(false);
             setEmailValidated(false);
             setMessageValidated(false);
-
             setErrorMessage('Complete required fields');
+            setTimeout(()=>{
+                setError(false);
+                setNameValidated(true);
+                setEmailValidated(true);
+                setMessageValidated(true);
+            }, 4000)
         }else{
             const response = await sendForm(dataForm);
             if(response.status === 200) {
